@@ -9,15 +9,15 @@ const Contact = require('./src/routes/Contact.routes');
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
-// app.use(cors);
+app.use(cors());
 
 //Enable this in case of CORS error at clients end.
-app.use(
-  cors({
-    origin:'http://localhost:3000',
-    credentials: true,
-  }),
-);
+// app.use(
+//   cors({
+//     origin:'http://localhost:3000',
+//     credentials: true,
+//   }),
+// );
 
 const port = process.env.PORT || "3001";
 app.listen(port, (err)=>{
